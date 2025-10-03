@@ -1,0 +1,264 @@
+/* --- Global Styles & Accessibility --- */
+:root {
+    /* Color Palette */
+    --color-primary-dark: #2C3E50; /* Darker Blue/Charcoal for main elements */
+    --color-primary-light: #34495E; /* Slightly lighter shade for contrast */
+    --color-accent-gold: #FFD700; /* Classic Gold */
+    --color-text-light: #ECF0F1; /* Light Grey for text on dark backgrounds */
+    --color-text-dark: #2C3E50; /* Dark for text on light backgrounds */
+    --color-background-light: #FDFDFD; /* Very light page background */
+    --color-card-background: #FFFFFF; /* White for menu item cards */
+    --color-border-subtle: #E0E0E0; /* Light border for cards/sections */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif; /* A more elegant body font */
+    line-height: 1.6;
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Header Styling --- */
+.site-header {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    padding: 60px 20px 40px; /* More padding top/bottom */
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.site-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em; /* Larger, more impactful title */
+    color: var(--color-accent-gold);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.site-header p {
+    font-size: 1.2em;
+    color: rgba(255,255,255,0.8);
+    margin-top: 10px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+/* --- Main Content Container --- */
+.menu-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Section Headings --- */
+.menu-section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    color: var(--color-primary-dark);
+    margin-top: 60px;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.menu-section h2::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-accent-gold);
+}
+
+
+/* --- Special of the Day --- */
+.special-section {
+    background-color: var(--color-primary-light);
+    color: var(--color-text-light);
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 2px solid var(--color-accent-gold); /* Gold border for emphasis */
+}
+
+.special-section h2 {
+    color: var(--color-accent-gold);
+    margin-top: 0;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.special-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: var(--color-text-light);
+}
+
+.special-card p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.special-price {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--color-accent-gold);
+    background-color: var(--color-primary-dark);
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* --- Menu Grid & Item Cards --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px min width for cards */
+    gap: 30px;
+}
+
+.menu-item-card {
+    background-color: var(--color-card-background);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners are rounded */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.item-image-wrapper {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent image size */
+    overflow: hidden;
+    position: relative; /* For image generation */
+}
+
+.item-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    display: block;
+}
+
+.item-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.item-details h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    color: var(--color-primary-dark);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--color-accent-gold);
+    background-color: var(--color-primary-dark);
+    padding: 6px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding: 30px 20px;
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    font-size: 0.9em;
+    border-top: 5px solid var(--color-accent-gold); /* Accent border */
+}
+
+address {
+    font-style: normal; /* Override default address italic */
+    opacity: 0.8;
+}
+
+/* --- RESPONSIVE BEHAVIOR --- */
+@media (max-width: 768px) {
+    .site-header h1 {
+        font-size: 2.5em;
+    }
+    .site-header p {
+        font-size: 1em;
+    }
+
+    .menu-section h2 {
+        font-size: 2em;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+        gap: 20px;
+    }
+    
+    .menu-item-card {
+        margin: 0 auto; /* Center cards if they don't fill width */
+        max-width: 350px; /* Max width for readability on small screens */
+    }
+
+    .special-section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .special-card h3 {
+        font-size: 1.5em;
+    }
+
+    .special-price {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 40px 15px 30px;
+    }
+    .site-header h1 {
+        font-size: 2em;
+    }
+    .menu-content {
+        padding: 0 10px;
+    }
+    .menu-section h2 {
+        font-size: 1.8em;
+    }
+    footer {
+        padding: 20px 10px;
+    }
+}
